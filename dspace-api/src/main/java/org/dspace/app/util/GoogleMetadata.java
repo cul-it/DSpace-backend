@@ -898,7 +898,9 @@ public class GoogleMetadata {
             Bitstream bitstream = findLinkableFulltext(item);
             if (bitstream != null) {
                 StringBuilder path = new StringBuilder();
-                path.append(configurationService.getProperty("dspace.ui.url"));
+                // CUL OVERRIDE - use ecommons URL since dspace.ui.url is set to localhost:4000
+                // path.append(configurationService.getProperty("dspace.ui.url"));
+                path.append("https://ecommons.cornell.edu");
 
                 if (item.getHandle() != null) {
                     path.append("/bitstream/");
